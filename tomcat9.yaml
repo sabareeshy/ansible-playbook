@@ -1,7 +1,7 @@
----
+--
 name: install tomcat 9
 become: yes
-hosts: appserver
+hosts: web
 vars:
         tomcat_home_dir: /opt/tomcat
         tomcat_user: tomcat
