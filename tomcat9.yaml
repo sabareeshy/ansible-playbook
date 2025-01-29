@@ -1,8 +1,8 @@
 ---
- name: install tomcat 9
-  become: yes
-  hosts: appserver
-  vars:
+name: install tomcat 9
+become: yes
+hosts: appserver
+vars:
         tomcat_home_dir: /opt/tomcat
         tomcat_user: tomcat
         tomcat_default_shell: /bin/false
@@ -13,7 +13,7 @@
         tomcat_manager_conf_location: /opt/tomcat/latest/webapps/manager/META-INF/context.xml
         tomcat_hostmanager_conf_location: /opt/tomcat/latest/webapps/host-manager/META-INF/context.xml
         manager_username: qtdevops
-  tasks:
+tasks:
     - name: Fail on unsupported operating systems
       ansible.builtin.fail:
         msg: This playbook supports only Ubuntu and Centos
@@ -94,7 +94,7 @@
         dest: "{{ tomcat_hostmanager_conf_location }}"
       notify:
         - restart tomcat
-  handlers:
+handlers:
     - name: restart tomcat
       ansible.builtin.systemd:
         name: tomcat
