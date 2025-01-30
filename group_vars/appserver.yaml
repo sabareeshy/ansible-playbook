@@ -1,4 +1,7 @@
 ---
+java_package_name: java-11-openjdk-devel
+java_home: /usr/lib/jvm/jre
+java_opts: '-Djava.security.egd=file:///dev/urandom'
 tomcat_home_dir: /opt/tomcat
 tomcat_user: tomcat
 tomcat_default_shell: /bin/false
